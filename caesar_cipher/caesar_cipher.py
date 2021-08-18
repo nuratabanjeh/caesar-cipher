@@ -13,7 +13,7 @@ def encrypt(plain_text, key):
     encrypted = ''
     for character in plain_text:
         if character not in upper_list and character not in lower_list:
-            char = re.sub(r'[^A-Za-z]+', '', character)
+            char = re.sub(r'[^A-Za-z]+', ' ', character)
             encrypted += char
         elif character in upper_list:
             char = (upper_list.index(character) + key) % 26
@@ -58,9 +58,9 @@ if __name__ == "__main__":
     # print(encrypt('***', 1))
     # print(encrypt('My name is solve the problem ', 26))
     # print(encrypt('ABC', 1))
-    # print(decrypt('BCD', 1))
+    print(decrypt('Hs vzr sgd adrs ne shldr  hs vzr sgd vnqrs ne shldr ', 1))
     example = encrypt('652//**  --',2)
-    print(example)
+    # print(example)
     # example2=decrypt(example,2)
     # crack(example2)
     # print(encrypt('"Where\'s Papa going with that ax?" said Fern to her mother as they were setting the table for breakfast.'))
